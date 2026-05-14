@@ -1,0 +1,41 @@
+MIT License - but for this project we need a commercial license.
+
+RECOMMENDED LICENSE STRUCTURE:
+
+```
+Copyright (c) 2026 Trading Bot Inc.
+
+Commercial Use License
+This software is proprietary and licensed, not sold.
+
+GRANT:
+- You may deploy 1 instance per purchased license
+- You may modify for your own use
+- You may NOT resell, sublicense, or distribute
+
+RESTRICTIONS:
+- No reverse engineering
+- No removal of copyright notices
+- No use of Binance trademark without permission
+
+DISCLAIMER:
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES,
+OR OTHER LIABILITY ARISING FROM USE OF THIS SOFTWARE.
+
+TRADING RISK:
+TRADING FUTURES IS EXTREMELY RISKY. YOU CAN LOSE MORE THAN 100%
+OF YOUR CAPITAL. THIS BOT MAY HAVE BUGS. YOU ARE SOLELY RESPONSIBLE
+FOR ALL TRADING DECISIONS AND LOSSES.
+
+By using this software, you agree to these terms.
+```
+
+For serious commercial product:
+- Consult a lawyer
+- Draft proper Terms of Service
+- Draft Privacy Policy
+- Get insurance (E&O)
+- Set up LLC for liability protection

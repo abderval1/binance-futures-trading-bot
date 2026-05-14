@@ -1,0 +1,14 @@
+# COMANDOS GIT
+
+```powershell
+cd C:\Users\agostinho.rosario\Downloads\bot
+git init
+git config user.name "abderval1"
+git config user.email "rosarioabderval@gmail.com"
+git add -A
+git commit -m "Initial commit"
+git remote add origin https://github.com/abderval1/binance-futures-trading-bot.git
+git push -u origin main
+```
+
+**NÃO use token exposto!** Gere novo token.
