@@ -13,13 +13,9 @@
     {
       "src": "/(.*)",
       "dest": "/frontend/dist/index.html"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "https://seu-backend.up.railway.app/api/$1"
     }
   ],
   "env": {
-    "VITE_API_URL": "https://seu-backend.up.railway.app"
+    "VITE_API_URL": "https://bot-backend.up.railway.app"
   }
 }

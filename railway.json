@@ -1,19 +1,17 @@
 {
+  "$schema": "https://railway.app/railway.schema.json",
   "services": [
     {
       "name": "backend",
       "type": "python",
       "path": "backend",
       "build": {
-        "commands": [
-          "pip install -r requirements.txt"
-        ]
+        "builder": "nixpacks",
+        "buildCommand": "pip install -r requirements.txt"
       },
       "start": "python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT",
       "env": {
-        "PYTHON_VERSION": "3.11",
-        "DATABASE_URL": "postgresql://bot_user:bot_password_123@localhost:5432/binance_bot",
-        "REDIS_URL": "redis://localhost:6379/0"
+        "PYTHON_VERSION": "3.11"
       }
     }
   ]
