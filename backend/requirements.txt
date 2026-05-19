@@ -5,4 +5,11 @@ sqlalchemy
 pydantic
 slowapi
 mangum
-# Add any other packages you currently use, e.g., alembic, psycopg2-binary, etc.
+pydantic-settings
+python-jose
+passlib[bcrypt]
+bcrypt
+cryptography
+python-multipart
+python-dotenv
+psycopg2-binary
