@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useAuthStore, useApiKeysStore, usePositionsStore, useTradingStore } from '@/store';
-import { tradingAPI, apiKeysAPI } from '@/lib/api';
-import Button from '@/components/ui/Button';
+import { useAuthStore, useApiKeysStore, usePositionsStore } from '@/store';
+import { tradingAPI } from '@/lib/api';
 import type { Position, Trade, Balance } from '@/types';
 import { formatDistanceToNow } from 'date-fns';
 
@@ -101,7 +100,6 @@ export default function AdminDashboard() {
 
 function OverviewTab({ positions, trades, balance, selectedKey, keys, onSelectKey }: any) {
   const totalPnl = positions.reduce((sum: number, p: Position) => sum + p.unrealized_pnl / 10000, 0);
-  const totalBalance = balance.reduce((sum: number, b: Balance) => sum + parseFloat(b.balance), 0);
 
   return (
     <div>

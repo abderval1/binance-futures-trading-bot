@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useApiKeysStore } from '@/store';
-import { apiKeysAPI } from '@/lib/api';
 import Button from '@/components/ui/Button';
 import type { APIKey } from '@/types';
 

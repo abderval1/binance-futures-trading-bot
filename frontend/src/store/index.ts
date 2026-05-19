@@ -77,7 +77,7 @@ export const useApiKeysStore = create<ApiKeysState>((set, get) => ({
     try {
       const response = await apiKeysAPI.getAll();
       // Mask keys in frontend
-      const keys = response.data.map(k => ({
+      const keys = response.data.map((k: APIKey) => ({
         ...k,
         api_key: null,
         secret_key: null,

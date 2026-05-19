@@ -68,3 +68,25 @@ export interface Balance {
   crossWalletBalance: string;
   crossUnPnl: string;
 }
+
+export interface OrderRequest {
+  symbol: string;
+  side: "BUY" | "SELL";
+  order_type: string;
+  quantity: number;
+  price?: number;
+  stop_price?: number;
+  time_in_force?: string;
+  reduce_only?: boolean;
+  close_position?: boolean;
+}
+
+export interface OrderResponse {
+  order_id: string;
+  symbol: string;
+  side: string;
+  status: string;
+  executed_qty: number;
+  avg_price: number;
+  message?: string | null;
+}

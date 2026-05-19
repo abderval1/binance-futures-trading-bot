@@ -22,8 +22,6 @@ export default function DashboardPage() {
     }
   }, [selectedKeyId, fetchPositions, fetchBalance]);
 
-  const selectedKey = keys.find(k => k.id === selectedKeyId);
-
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Header */}
@@ -128,7 +126,7 @@ export default function DashboardPage() {
                       positions.map((pos) => (
                         <tr key={pos.symbol}>
                           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{pos.symbol}</td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{(pos.position_amount / 10000).toFixed(4)}</td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{(pos.quantity / 10000).toFixed(4)}</td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${(pos.entry_price / 10000).toFixed(2)}</td>
                           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${(pos.mark_price / 10000).toFixed(2)}</td>
                           <td className={`px-6 py-4 whitespace-nowrap text-sm font-bold ${pos.unrealized_pnl >= 0 ? 'text-green-600' : 'text-red-600'}`}>
