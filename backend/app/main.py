@@ -4,11 +4,13 @@ from fastapi.responses import JSONResponse
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
+from contextlib import asynccontextmanager
 from .config import settings
 from . import auth, schemas, crud
 from .database import engine, Base
 from .routes import users, api_keys, trading
 from .routers import auth as auth_router
+from .trading.scanner import stop_all_scanners
 from .utils.logging import setup_logging
 import logging
 
@@ -21,7 +23,23 @@ limiter = Limiter(key_func=get_remote_address)
 # Create tables
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="Binance Futures Trading Bot", version="1.0.0")
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Application lifespan: startup and shutdown events"""
+    logger.info("Trading Bot API starting up...")
+    yield
+    # Shutdown: stop all running scanners gracefully
+    logger.info("Shutting down - stopping all bot scanners...")
+    await stop_all_scanners()
+    logger.info("All scanners stopped. Goodbye!")
+
+
+app = FastAPI(
+    title="Binance Futures Trading Bot",
+    version="1.0.0",
+    lifespan=lifespan
+)
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 

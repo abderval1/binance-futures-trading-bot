@@ -17,10 +17,12 @@ if __name__ == "__main__":
     )
 
     if response.status_code == 200:
-        print("✓ Admin user created successfully!")
-        print(f"\n⚠️  SECURITY: Change these credentials immediately!")
+        print("Admin user created successfully!")
+        print(f"\nSECURITY: Change these credentials immediately!")
         print(f"Email: admin@tradingbot.com")
         print(f"Password: ChangeMeNow123!")
         print("\nLogin at: http://localhost:5173/login")
     else:
-        print(f"✗ Failed: {response.text}")
+        print(f"Failed with status code: {response.status_code}")
+        print(f"Response: {response.text}")
+
